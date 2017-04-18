@@ -16,16 +16,30 @@ var Bot = new TwitterBot({
     access_token_secret: process.env.BOT_ACCESS_TOKEN_SECRET
 });
 
-var phraseArray = [ "hey twitter",
-    "im tweeting",
-    "tweet tweet",
-    "tweetstorm time... 1/22",
-    "plz RT v important",
-    "delete ur account",
-    "it me",
-    "same",
-    "#dogpants go on 4 legs!!",
-    "#thedress is blue and black" ];
+var phraseArray = [ "Ohayou Gozaimasu!!",
+    "Konnichiwa!!!",
+    "Hisashiburi!!!",
+    "Suki desu",
+    "Mada tabete imasen",
+    "Onaka ga suite imasu",
+    "Itadakimasu!",
+    "Irasshaimase!!",
+    "Kore wa nan desu ka?!",
+    "Meado o shiete moraemasu ka?",
+    "Kite kudasai ne"];
+
+//nouns for generic relatives, I.E mom, dad, aunt etc
+
+var japNouns = ["Ka", "To", "Ba", "Ji", "Obachan", "Ojichan", "Nii", "Ne",
+                "Ototo", "Imouto"];
+
+//animes and manga that the bot will be choosing from
+var japManga = ["Bleach", "Naruto", "Boruto", "One Piece", "Shippuden",
+                "DBZ", "Nisekoi", "Outlaw Star", "Cowboy Bebop", "Kimi No Wa",
+                "Kimi no Iru Machi", "Akame ga Kill", "Space Dandy", "Inuyasha"];
+
+//Honorifics cuz the bot has to get really japanese with it
+var japEnds = ["-san", "-chan", "-chi", "-sama", "-kun", "-bo"];
 
 function chooseRandom(myArray) {
     return myArray[Math.floor(Math.random() * myArray.length)];
