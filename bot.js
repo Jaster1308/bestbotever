@@ -1,20 +1,38 @@
 var twit = require('twit');
 var TwitterBot = require('node-twitterbot').TwitterBot;
 
-// Want the twit bot to reply to the user so I have to make it active
-
-// var stream = Twitter.stream('user');
-
-// This should follow the person that follows the bot
-
-// stream.on('follow', followed);
-
 var Bot = new TwitterBot({
     consumer_key: process.env.BOT_CONSUMER_KEY,
     consumer_secret: process.env.BOT_CONSUMER_SECRET,
     access_token: process.env.BOT_ACCESS_TOKEN,
     access_token_secret: process.env.BOT_ACCESS_TOKEN_SECRET
 });
+
+// Want the twit bot to reply to the user so I have to make it active
+
+var Twitter = new Tweetpackage(Bot);
+
+// This should follow the person that follows the bot
+
+stream.on('follow', followed);
+
+Twitter.stream('statuses/filter', {track: '#animebot'}, function(stream) {
+    stream.on('data', function(tweet) {
+        console.log(tweet.text);
+        var reply = {status: "Yo @"+ tweet.user.screen_name + ", What do you want?"};
+        Twitter.post('statuses/update', reply, function(error, tweetReply, response){
+            if(error){
+                console.log(error);
+            }
+            console.log(tweetReply.text);
+        });
+    });
+    stream.on('error', function(error) {
+        console.log(error);
+    });
+});
+
+
 
 var phraseArray = [ "Ohayou Gozaimasu!!",
     "Konnichiwa!!!",
