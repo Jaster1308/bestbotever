@@ -71,7 +71,7 @@ function chooseRandom(myArray) {
 //     });
 // }
 
-var phrase = chooseRandom(phraseArray) + "Today my " + chooseRandom(japNouns) + chooseRandom(japEnds) +
-    "told me about " + chooseRandom(japManga) + "."+ " Should I read it?";
+var phrase = chooseRandom(phraseArray) + " Today my " + chooseRandom(japNouns) + chooseRandom(japEnds) +
+    " told me about " + chooseRandom(japManga) + "."+ " Should I read it?";
 console.log(phrase);
 Bot.tweet(phrase);
