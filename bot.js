@@ -50,7 +50,7 @@ function followed(event){
     // Gotta grab that good ole twitter handle
 
     var
-        name = event.source.name,
+        name = event.source.name;
         screenName = event.source.screen_name;
     // This should reply to with a sentence
     tweetNow('@'+ screenName + ' What the heck are you following me for?')
