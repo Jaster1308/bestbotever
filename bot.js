@@ -19,14 +19,14 @@ var Bot = new TwitterBot({
 var phraseArray = [ "Ohayou Gozaimasu!!",
     "Konnichiwa!!!",
     "Hisashiburi!!!",
-    "Suki desu",
-    "Mada tabete imasen",
-    "Onaka ga suite imasu",
+    "Suki desu.....",
+    "Mada tabete imasen.",
+    "Onaka ga suite imasu.",
     "Itadakimasu!",
     "Irasshaimase!!",
     "Kore wa nan desu ka?!",
     "Meado o shiete moraemasu ka?",
-    "Kite kudasai ne"];
+    "Kite kudasai ne."];
 
 //nouns for generic relatives, I.E mom, dad, aunt etc
 
@@ -71,5 +71,6 @@ function tweetNow(tweetTxt) {
     });
 }
 
-var phrase = chooseRandom(phraseArray) + ", " + chooseRandom(phraseArray);
+var phrase = chooseRandom(phraseArray) + "Today my " + chooseRandom(japNouns) + chooseRandom(japEnds) +
+    "told me about " + chooseRandom(japManga) + "."+ " Should I read it?";
 Bot.tweet(phrase);
