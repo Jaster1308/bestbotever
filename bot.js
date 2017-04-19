@@ -90,22 +90,6 @@ var stream = T.stream('user');
 
 stream.on('follow', followed);
 
-// Twitter.stream('statuses/filter', {track: '#animebot'}, function(stream) {
-//     stream.on('data', function(tweet) {
-//         console.log(tweet.text);
-//         var reply = {status: "Yo @"+ tweet.user.screen_name + ", What do you want?"};
-//         Twitter.post('statuses/update', reply, function(error, tweetReply, response){
-//             if(error){
-//                 console.log(error);
-//             }
-//             console.log(tweetReply.text);
-//         });
-//     });
-//     stream.on('error', function(error) {
-//         console.log(error);
-//     });
-// });
-
 // Function for replying to the user who followed the bot
 function followed(event){
     console.log('Follow Event is running.....');
@@ -131,3 +115,18 @@ function tweetNow(tweetTxt) {
         }
     });
 }
+T.stream('statuses/filter', {track: '#animebot'}, function(stream) {
+    stream.on('data', function(tweet) {
+        console.log(tweet.text);
+        var reply = {status: "Yo @"+ tweet.user.screen_name + ", What do you want?"};
+        T.post('statuses/update', reply, function(error, tweetReply, response){
+            if(error){
+                console.log(error);
+            }
+            console.log(tweetReply.text);
+        });
+    });
+    stream.on('error', function(error) {
+        console.log(error);
+    });
+});
