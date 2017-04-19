@@ -8,31 +8,6 @@ var Bot = new TwitterBot({
     access_token_secret: process.env.BOT_ACCESS_TOKEN_SECRET
 });
 
-// Want the twit bot to reply to the user so I have to make it active
-
-var Twitter = new Tweetpackage(Bot);
-
-// This should follow the person that follows the bot
-
-stream.on('follow', followed);
-
-Twitter.stream('statuses/filter', {track: '#animebot'}, function(stream) {
-    stream.on('data', function(tweet) {
-        console.log(tweet.text);
-        var reply = {status: "Yo @"+ tweet.user.screen_name + ", What do you want?"};
-        Twitter.post('statuses/update', reply, function(error, tweetReply, response){
-            if(error){
-                console.log(error);
-            }
-            console.log(tweetReply.text);
-        });
-    });
-    stream.on('error', function(error) {
-        console.log(error);
-    });
-});
-
-
 
 var phraseArray = [ "Ohayou Gozaimasu!!",
     "Konnichiwa!!!",
@@ -62,6 +37,32 @@ var japEnds = ["-san", "-chan", "-chi", "-sama", "-kun", "-bo"];
 function chooseRandom(myArray) {
     return myArray[Math.floor(Math.random() * myArray.length)];
 }
+// Want the twit bot to reply to the user so I have to make it active
+
+var Twitter = new Tweetpackage(Bot);
+
+// This should follow the person that follows the bot
+
+stream.on('follow', followed);
+
+Twitter.stream('statuses/filter', {track: '#animebot'}, function(stream) {
+    stream.on('data', function(tweet) {
+        console.log(tweet.text);
+        var reply = {status: "Yo @"+ tweet.user.screen_name + ", What do you want?"};
+        Twitter.post('statuses/update', reply, function(error, tweetReply, response){
+            if(error){
+                console.log(error);
+            }
+            console.log(tweetReply.text);
+        });
+    });
+    stream.on('error', function(error) {
+        console.log(error);
+    });
+});
+
+
+
 // Function for replying to the user who followed the bot
 // function followed(event){
 //     console.log('Follow Event is running.....');
