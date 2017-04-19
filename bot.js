@@ -50,32 +50,23 @@ function chooseRandom(myArray) {
     return myArray[Math.floor(Math.random() * myArray.length)];
 }
 
-// function mySentences() {
-//     return chooseRandom(styles)
-// }
-styles = [family, todo, food];
-
-selectedStyle = chooseRandom(styles);
-
-if (styles = family){
-    var phrase = chooseRandom(phraseArray) + " Today my " + chooseRandom(japNouns) + chooseRandom(japEnds) +
+var phrase = chooseRandom(phraseArray) + " Today my " + chooseRandom(japNouns) + chooseRandom(japEnds) +
         " told me about " + chooseRandom(japManga) + "."+ " Should I read it?";
-    console.log(phrase);
-    Bot.tweet(phrase);
-}else if (styles = todo){
-    var things = "Today I am going to " + chooseRandom(japPlaces) + " to look at " +
+
+var things = "Today I am going to " + chooseRandom(japPlaces) + " to look at " +
          + chooseRandom(japCultures) + "." + "What else should I do here?!";
-    console.log(things);
-    Bot.tweet(things);
-}else if (styles = food) {
-    var eating = "At " + chooseRandom(japPlaces) + " I tried " + chooseRandom(japFood) +
+
+var eating = "At " + chooseRandom(japPlaces) + " I tried " + chooseRandom(japFood) +
             ", it was " + chooseRandom(reactions) + '.';
-    console.log(eating);
-    Bot.tweet(eating)
+
+styles = [phrase, things, eating];
+
+function mySentences() {
+    return chooseRandom(styles)
 }
 
-// console.log(mySentences());
-// Bot.tweet(mySentences());
+console.log(mySentences());
+Bot.tweet(mySentences());
 
 
 

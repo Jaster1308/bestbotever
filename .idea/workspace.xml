@@ -24,8 +24,8 @@
       <file leaf-file-name="bot.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bot.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="918">
-              <caret line="54" column="4" lean-forward="true" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="4" />
+            <state relative-caret-position="1037">
+              <caret line="61" column="34" lean-forward="false" selection-start-line="61" selection-start-column="34" selection-end-line="61" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -185,7 +185,7 @@
       <updated>1492454507972</updated>
       <workItem from="1492454509339" duration="1472000" />
       <workItem from="1492548172974" duration="9959000" />
-      <workItem from="1492624427116" duration="2786000" />
+      <workItem from="1492624427116" duration="3426000" />
     </task>
     <task id="LOCAL-00001" summary="added a a tweet reply function and follows and tweets back the person that follows the bot">
       <created>1492549499157</created>
@@ -243,11 +243,18 @@
       <option name="project" value="LOCAL" />
       <updated>1492624596497</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="made more sentences and variables for the bot to choose from">
+      <created>1492627260829</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1492627260829</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14217000" />
+    <option name="totallyTimeSpent" value="14857000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="854" height="1017" extended-state="0" />
@@ -286,7 +293,8 @@
     <MESSAGE value="more editing" />
     <MESSAGE value="hopefully that replies" />
     <MESSAGE value="switched the order of operations" />
-    <option name="LAST_COMMIT_MESSAGE" value="switched the order of operations" />
+    <MESSAGE value="made more sentences and variables for the bot to choose from" />
+    <option name="LAST_COMMIT_MESSAGE" value="made more sentences and variables for the bot to choose from" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -306,9 +314,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1492627234067" expanded="true" signature="2355:2568" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -320,20 +326,18 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config.js" />
-    <entry file="file://$PROJECT_DIR$/bot.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="54" column="4" lean-forward="true" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="4" />
-          <folding>
-            <marker date="1492627234067" expanded="true" signature="2355:2568" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bot.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1037">
+          <caret line="61" column="34" lean-forward="false" selection-start-line="61" selection-start-column="34" selection-end-line="61" selection-end-column="34" />
           <folding />
         </state>
       </provider>
