@@ -46,6 +46,28 @@ var japCultures = ["Kawaii stuff", "Japanese idols", "Manga", "Anime", "Fashion"
 
 var reactions = ["good", "awesome", "impeccable", "ugly", "gross", "awful", "very delicious"];
 
+var publicHiragana = ["ka", "ki", "ku", "ke", "ko", "sa", "shi", "su", "se", "so", "ta",
+                        "chi", "tsu", "te", "to", "na", "ni", "nu", "ne", "no", "ha", "hi",
+                        "fu", "he", "ho", "ya", "yu", "yo", "ma", "mi", "mu", "me", "o",
+                        "ra", "ri", "ru", "re", "ro", "wa", "wo", "n"];
+
+var publicKatakana = ["n", "wa", "ra", "ya", "ma", "ha", "na", "ta", "sa", "ka", "a", "wi",
+                        "ri", "mi", "hi", "ni", "chi", "shi", "ki", "i", "ru", "yu", "mu", "fu",
+                        "nu", "tsu", "su", "ku", "u", "we", "re", "me", "he", "ne", "te", "se", "ke",
+                        "e", "wo", "ro", "yo", "mo", "ho", "no", "to", "so", "ko", "o"];
+
+var publicKanji = ["ichi", "migi", "ame", "en", "ou", "oto", "shita", "hi", "hana", "kai",
+                    "mana", "gaku", "ki", "kyuu", "yasu", "tama", "kane", "kin", "sora", "kuu",
+                    "tsuki", "gatsu", "getsu", "inu", "mi", "ken", "go", "kuchi", "kou", "hidari",
+                    "san", "yama", "ko", "yon", "shi", "ito", "ji", "mimi", "nana", "kuruma", "te",
+                    "jyuu", "de", "shutsu", "onnna", "jyo", "chii", "ue", "mori", "shin",
+                    "hito", "jin", "mizu", "tada", "iki", "ao", "yuu", "ishi", "seki", "aka", "seki",
+                    "kawa", "saki", "haya", "sou", "kusa", "ahi", "soku", "mura", "son", "oodai",
+                    "otoko", "dan", "take", "naka", "chuu", "mushi", "machi", "cho", "ten", "ta", "tuchi",
+                    "do", "futa", "nichi", "hai", "iri", "toshi", "nen", "shiro", "haku", "hachi", "hyaku",
+                    "bun", "ki", "boku", "hon", "na", "mei", "me", "moku", "ta", "ritsu", "chikara", "riki",
+                    "hyashi", "rin", "roku"];
+
 function chooseRandom(myArray) {
     return myArray[Math.floor(Math.random() * myArray.length)];
 }
@@ -59,7 +81,17 @@ var things = "Today I am going to " + chooseRandom(japPlaces) + " to look at " +
 var eating = "At " + chooseRandom(japPlaces) + " I tried " + chooseRandom(japFood) +
             ", it was " + chooseRandom(reactions) + '.';
 
-styles = [phrase, things, eating];
+var hira = "What did I just say? " + chooseRandom(publicHiragana) + chooseRandom(publicHiragana) + " " +
+    chooseRandom(publicHiragana) + chooseRandom(publicHiragana) + chooseRandom(publicHiragana) + ".";
+
+var kata = "Can anyone understand me? " + chooseRandom(publicKanji) + ', ' + chooseRandom(publicKatakana) +
+    chooseRandom(publicKatakana) + chooseRandom(publicKatakana) + ". " + chooseRandom(publicKatakana) +
+    chooseRandom(publicKatakana) + chooseRandom(publicKatakana) + '.';
+
+var kanji = "Kanji Kanji Kanji!!!!!! " + chooseRandom(publicKanji) + chooseRandom(publicKanji) + '?' +
+    chooseRandom(publicKanji) + chooseRandom(publicKanji) + chooseRandom(publicKanji)+ ", " + chooseRandom(publicKanji) + chooseRandom(publicKanji)+ chooseRandom(publicKanji) + "!";
+
+styles = [phrase, things, eating, hira, kata, kanji, why];
 
 function mySentences() {
     return chooseRandom(styles)
