@@ -91,7 +91,7 @@ var kata = "Can anyone understand me? " + chooseRandom(publicKanji) + ', ' + cho
 var kanji = "Kanji Kanji Kanji!!!!!! " + chooseRandom(publicKanji) + chooseRandom(publicKanji) + '?' +
     chooseRandom(publicKanji) + chooseRandom(publicKanji) + chooseRandom(publicKanji)+ ", " + chooseRandom(publicKanji) + chooseRandom(publicKanji)+ chooseRandom(publicKanji) + "!";
 
-styles = [phrase, things, eating, hira, kata, kanji, why];
+styles = [phrase, things, eating, hira, kata, kanji];
 
 function mySentences() {
     return chooseRandom(styles)
