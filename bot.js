@@ -88,7 +88,7 @@ var kata = "Can anyone understand me? " + chooseRandom(publicKanji) + ', ' + cho
     chooseRandom(publicKatakana) + chooseRandom(publicKatakana) + ". " + chooseRandom(publicKatakana) +
     chooseRandom(publicKatakana) + chooseRandom(publicKatakana) + '.';
 
-var kanji = "Kanji Kanji Kanji!!!!!! " + chooseRandom(publicKanji) + chooseRandom(publicKanji) + '?' +
+var kanji = "Kanji Kanji Kanji!!!!!! " + chooseRandom(publicKanji) + chooseRandom(publicKanji) + '? ' +
     chooseRandom(publicKanji) + chooseRandom(publicKanji) + chooseRandom(publicKanji)+ ", " + chooseRandom(publicKanji) + chooseRandom(publicKanji)+ chooseRandom(publicKanji) + "!";
 
 styles = [phrase, things, eating, hira, kata, kanji];
@@ -106,7 +106,7 @@ Bot.tweet(mySentences());
 
 
 // Want the twit bot to reply to the user so I have to make it active
-var Twit = require('twit');
+var TwitterPackage = require('twitter');
 var T = new Twit({
     consumer_key: process.env.BOT_CONSUMER_KEY,
     consumer_secret: process.env.BOT_CONSUMER_SECRET,
@@ -114,44 +114,13 @@ var T = new Twit({
     access_token_secret: process.env.BOT_ACCESS_TOKEN_SECRET
 });
 
-// var Twitter = new Tweetpackage(Bot);
+var Twitter = new TwitterPackage(T);
 
-
-var stream = T.stream('user');
-// This should follow the person that follows the bot
-
-stream.on('follow', followed);
-
-// Function for replying to the user who followed the bot
-function followed(event){
-    console.log('Follow Event is running.....');
-    // Gotta grab that good ole twitter handle
-
-    var name= event.source.name;
-        screenName = event.source.screen_name;
-    // This should reply to with a sentence
-    tweetNow('@'+ screenName + ' What the heck are you following me for?')
-}
-
-// this is validation to see if the tweet go to the user who followed
-function tweetNow(tweetTxt) {
-    var tweet = {
-        status: tweetTxt
-    };
-    Twitter.post('statuses/updates', tweet, function(err, data, response){
-        if(err){
-            console.log("There's something wrong here......")
-        }
-        else{
-            console.log('Lots of Love!')
-        }
-    });
-}
-T.stream('statuses/filter', {track: '#animebot'}, function(stream) {
+Twitter.stream('statuses/filter', {track: '#animebot'}, function(stream) {
     stream.on('data', function(tweet) {
         console.log(tweet.text);
         var reply = {status: "Yo @"+ tweet.user.screen_name + ", What do you want?"};
-        T.post('statuses/update', reply, function(error, tweetReply, response){
+        Twitter.post('statuses/update', reply, function(error, tweetReply, response){
             if(error){
                 console.log(error);
             }
@@ -162,3 +131,49 @@ T.stream('statuses/filter', {track: '#animebot'}, function(stream) {
         console.log(error);
     });
 });
+
+// var stream = T.stream('user');
+// // This should follow the person that follows the bot
+//
+// stream.on('follow', followed);
+//
+// // Function for replying to the user who followed the bot
+// function followed(event){
+//     console.log('Follow Event is running.....');
+//     // Gotta grab that good ole twitter handle
+//
+//     var name= event.source.name;
+//         screenName = event.source.screen_name;
+//     // This should reply to with a sentence
+//     tweetNow('@'+ screenName + ' What the heck are you following me for?')
+// }
+//
+// // this is validation to see if the tweet go to the user who followed
+// function tweetNow(tweetTxt) {
+//     var tweet = {
+//         status: tweetTxt
+//     };
+//     Twitter.post('statuses/updates', tweet, function(err, data, response){
+//         if(err){
+//             console.log("There's something wrong here......")
+//         }
+//         else{
+//             console.log('Lots of Love!')
+//         }
+//     });
+// }
+// T.stream('statuses/filter', {track: '#animebot'}, function(stream) {
+//     stream.on('data', function(tweet) {
+//         console.log(tweet.text);
+//         var reply = {status: "Yo @"+ tweet.user.screen_name + ", What do you want?"};
+//         T.post('statuses/update', reply, function(error, tweetReply, response){
+//             if(error){
+//                 console.log(error);
+//             }
+//             console.log(tweetReply.text);
+//         });
+//     });
+//     stream.on('error', function(error) {
+//         console.log(error);
+//     });
+// });
